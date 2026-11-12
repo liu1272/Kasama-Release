@@ -46,6 +46,19 @@ export KASAMA_PG_DSN='postgres://用户:口令@127.0.0.1:5432/kasama?sslmode=dis
 bash deploy/linux/install.sh
 ```
 
+## 3.5 让平台托管运行时（可选，启用"运行时一键更新"）
+
+默认安装脚本单独启动 `kasamastrike`。若希望平台托管它（这样才能一键更新运行时、
+并做 drain/回滚），改用托管模式启动平台：
+
+```bash
+export KASAMA_CS_SUPERVISE=1
+export KASAMA_CS_BIN=/opt/kasama/bin/kasamastrike      # 或 .exe
+# 不再单独启动 kasamastrike
+```
+
+托管模式下平台会拉起运行时、记录日志、并在替换二进制后自动重启与健康检查。
+
 ## 4. 反向代理与 HTTPS
 
 平台默认只监听 `127.0.0.1`。对外提供服务时建议放在 Nginx/Caddy 之后：
