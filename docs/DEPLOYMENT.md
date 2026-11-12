@@ -59,6 +59,20 @@ export KASAMA_CS_BIN=/opt/kasama/bin/kasamastrike      # 或 .exe
 
 托管模式下平台会拉起运行时、记录日志、并在替换二进制后自动重启与健康检查。
 
+## 3.6 访问 GitHub 受限时
+
+平台的更新器会读取「系统 → 设置 → 全局代理」（`global_proxy`）。如果你的网络访问
+GitHub 受限（例如只能通 `api.github.com`），在设置里填本机代理即可，例如：
+
+```
+http://127.0.0.1:7890        # Clash / mihomo 默认混合端口
+```
+
+之后检查更新、下载清单/安装包、下载运行时都会走这条代理。
+
+> 平台下载资产时**优先走 `api.github.com`（API 端点）**，失败才回退 `github.com`，
+> 所以很多"只有 github.com 被墙"的环境不配代理也能升级。
+
 ## 4. 反向代理与 HTTPS
 
 平台默认只监听 `127.0.0.1`。对外提供服务时建议放在 Nginx/Caddy 之后：
