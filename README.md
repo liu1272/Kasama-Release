@@ -9,6 +9,8 @@
 - 升级：[`docs/UPDATE.md`](docs/UPDATE.md)
 - 安全：[`SECURITY.md`](SECURITY.md)
 
+**当前版本：6.1.0**（2026-11-13）· 下载见 [Releases](../../releases/tag/v6.1.0)
+
 ## 下载哪个包
 
 | 平台 | 文件 | 说明 |
