@@ -16,6 +16,7 @@
 ```
 kasama-<ver>-windows-amd64.zip
 kasama-<ver>-linux-amd64.tar.gz
+kasama-<ver>-linux-amd64.zip
 kasamastrike-<os>-<arch>[.exe]
 manifest.json           # 版本矩阵（平台/运行时/数据库结构）
 manifest.json.sig       # Ed25519 签名（平台内置公钥验签）
