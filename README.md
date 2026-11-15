@@ -16,7 +16,7 @@
 | 平台 | 文件 | 说明 |
 |---|---|---|
 | Windows x64 | `kasama-<版本>-windows-amd64.zip` | 解压后运行 `Install.bat` |
-| Linux x64 | `kasama-<版本>-linux-amd64.tar.gz` | 解压后运行 `deploy/linux/install.sh` |
+| Linux x64 | `kasama-<版本>-linux-amd64.tar.gz` / `.zip` | 解压后运行 `deploy/linux/install.sh`；`.zip` 供一键更新器取包 |
 | 运行时 | `kasamastrike-<os>-<arch>[.exe]` | 智能体运行时（平台会自动调用） |
 | 校验 | `SHA256SUMS-<版本>.txt` / `manifest.json` + `manifest.json.sig` | 见下 |
 | 私有仓访问 | GitHub 只读凭据（PAT） | 仅授权用户可见；用于下载与一键更新 |
