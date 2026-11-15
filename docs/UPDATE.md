@@ -28,6 +28,17 @@ SHA256SUMS-<ver>.txt    # 人读校验
 sha256sum -c SHA256SUMS-<ver>.txt
 ```
 
+### 2.1 私有发行仓
+
+发行仓为私有仓库，匿名访问会得到 404。UI 一键更新与资产下载需要平台进程环境变量：
+
+```bash
+KASAMA_UPDATE_GITHUB_TOKEN=<GitHub 只读 PAT>
+```
+
+只放在进程环境或 `deploy/<os>/.env`；不要写入 `config.json`、前端或任何会提交的文件。
+该凭据仅用于 `api.github.com` 与资产下载，不下发前端、不写日志。手工下载时请使用已授权账号。
+
 ## 3. UI 一键更新会做什么
 
 1. 读取 `manifest.json` 并**验签**（签名无效直接拒绝，不会“降级为只校验哈希”）；
