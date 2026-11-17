@@ -9,7 +9,18 @@
 - 升级：[`docs/UPDATE.md`](docs/UPDATE.md)
 - 安全：[`SECURITY.md`](SECURITY.md)
 
-**当前版本：6.2.0**（2026-11-15）· 下载见 [Releases](../../releases/tag/v6.2.0)
+**当前版本：6.4.0**（2026-11-17）· 下载见 [Releases](../../releases/tag/v6.4.0)
+
+## 6.4 更新摘要
+
+- 执行边界：scope 抽取不再把 `php://`、说明文本、本机回环地址判成越界；
+  任务范围支持 `*.example.com` 通配符，ctf2 工具不再被范围闸误拒。
+- 稳定性：同 lane 多会话不再互相覆盖守卫配置导致暂停后无法恢复；
+  主 Agent 收尾后自动唤醒规划器。
+- 规划器唤醒预算默认关闭，消除空转唤醒干扰。
+- 前端治理：预算硬暂停、意图时间盒、看门狗、策略拒绝暂停、漏洞人工审批、
+  唤醒预算等强阻断能力全部可开关；按钮点击与设置变更写入系统日志，便于溯源。
+- 自进化/反思闭环的 8 项修复一并包含。
 
 ## 下载哪个包
 
@@ -19,6 +30,8 @@
 | Linux x64 | `kasama-<版本>-linux-amd64.tar.gz` / `.zip` | 解压后运行 `deploy/linux/install.sh`；`.zip` 供一键更新器取包 |
 | 运行时 | `kasamastrike-<os>-<arch>[.exe]` | 智能体运行时（平台会自动调用） |
 | 校验 | `SHA256SUMS-<版本>.txt` / `manifest.json` + `manifest.json.sig` | 见下 |
+
+`-plain` 结尾的是未混淆排障版，功能一致、保留符号与行号；对外交付建议用混淆版。
 
 ## 三步启动（Windows）
 
