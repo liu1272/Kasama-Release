@@ -9,10 +9,12 @@
 - 升级：[`docs/UPDATE.md`](docs/UPDATE.md)
 - 安全：[`SECURITY.md`](SECURITY.md)
 
-**当前版本：6.4.5**（2026-11-19）· 下载见 [Releases](../../releases/tag/v6.4.5)
+**当前版本：6.4.6**（2026-11-19）· 下载见 [Releases](../../releases/tag/v6.4.6)
 
 ## 6.4 更新摘要
 
+- **6.4.6 运行时瘦身**：KasamaStrike 5.1.0 改为 headless 构建并移除 TUI，Linux 运行时 206.1→133.0 MB，Windows 208.2→138.5 MB；发布包不再携带 sourcemap。
+- **6.4.6 工具上下文**：CS 配置开启 `perf.deferredTools`，14 个重型内置工具族首轮不进上下文，按需 `tool_search` / `load_tools` 加载（约省 8-12k tokens/会话）。
 - **6.4.5 PoC 采集**：nuclei / Metasploit / GitHub 三源确定性采集 + 每日刷新 + 受限 live 兜底；不调用 LLM、不执行模板。
 - **6.4.5 运行时隔离**：KasamaStrike 的 11 个内置 MCP 显式关闭，平台同名配置可覆盖。
 - **6.4.1 修复一键更新**：下载 SHA256SUMS 改为优先走 `api.github.com`，不再因
