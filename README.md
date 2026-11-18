@@ -9,10 +9,12 @@
 - 升级：[`docs/UPDATE.md`](docs/UPDATE.md)
 - 安全：[`SECURITY.md`](SECURITY.md)
 
-**当前版本：6.4.1**（2026-11-17）· 下载见 [Releases](../../releases/tag/v6.4.1)
+**当前版本：6.4.5**（2026-11-19）· 下载见 [Releases](../../releases/tag/v6.4.5)
 
 ## 6.4 更新摘要
 
+- **6.4.5 PoC 采集**：nuclei / Metasploit / GitHub 三源确定性采集 + 每日刷新 + 受限 live 兜底；不调用 LLM、不执行模板。
+- **6.4.5 运行时隔离**：KasamaStrike 的 11 个内置 MCP 显式关闭，平台同名配置可覆盖。
 - **6.4.1 修复一键更新**：下载 SHA256SUMS 改为优先走 `api.github.com`，不再因
   `github.com` 被阻断而"检查更新正常、下载清单超时"。6.4.0 用户请先手动覆盖安装
   6.4.1，之后可正常一键升级。
